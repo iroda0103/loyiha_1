@@ -1,4 +1,5 @@
 import {makeExecutableSchema} from '@graphql-tools/schema';
+import roomSchema from '../modules/rooms/_index.js'
 
 const typeDefs=`#graphql
 type Query{
@@ -13,8 +14,8 @@ const resolvers={
 }
 
 const schema=makeExecutableSchema({
-    typeDefs:[typeDefs],
-    resolvers:[resolvers],
+    typeDefs:[typeDefs,roomSchema.typeDefs],
+    resolvers:[resolvers,roomSchema.resolvers],
 })
 
 
