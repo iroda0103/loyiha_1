@@ -1,7 +1,7 @@
 import db from "../../db/index.js";
 
-const roomList = async (data) => {
-  const { q, filters = {}, sort, page = { offset: 0, limit: 4 } } = data;
+const roomList = async (data={}) => {
+  const { q='', filters = {}, sort, page = { offset: 0, limit: 4 } } = data;
 
   const orderBy = sort
     ? Object.values(sort).map((elem) => elem.toLowerCase())
@@ -19,7 +19,6 @@ const roomList = async (data) => {
 
   const total = await db("rooms")
     .where(filters)
-    .whereILike("name", `%${q}%`)
     .count();
 
   rooms = await rooms;

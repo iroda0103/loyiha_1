@@ -8,7 +8,7 @@
     "dev": "nodemon src"
   },
   "keywords": [],
-  "author": "",
+  "author": "Iroda Muminova",
   "license": "ISC",
   "dependencies": {
     "@apollo/server": "^4.8.1",
