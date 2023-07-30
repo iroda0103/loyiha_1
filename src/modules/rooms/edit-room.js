@@ -1,10 +1,11 @@
 import db from "../../db/index.js";
+import { NotFoundError } from "../../shared/errors/index.js";
 
 const editRoom = async ({ id, ...changes }) => {
   const room = await db("rooms").where({ id }).first();
 
   if (!room) {
-    throw new Error("Bunday element yo'q");
+    throw new NotFoundError("Bunday element yo'q");
   }
 
   const result = await db("rooms").where({ id }).update(changes).returning("*");
