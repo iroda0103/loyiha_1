@@ -1,5 +1,5 @@
 const express = require('express');
-const { NotFoundError, BadRequestError, UnauthorizedError, ForbiddenError } = require('.');
+const { NotFoundError, BadRequestError, UnauthorizedError, ForbiddenError } = require('./index.cjs');
 
 /**
  * @param {Error} err

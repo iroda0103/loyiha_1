@@ -1,5 +1,5 @@
 import db from "../../db/index.js";
-import { NotFoundError } from "../../shared/errors/index.js";
+import { NotFoundError } from "../../shared/errors/index.cjs";
 
 const editRoom = async ({ id, ...changes }) => {
   const room = await db("rooms").where({ id }).first();
